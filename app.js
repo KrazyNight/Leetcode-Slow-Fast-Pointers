@@ -232,3 +232,119 @@ var detectCycle = function(head) {
     
 };
  */
+
+
+
+
+
+
+
+
+
+
+//Leetcode: 19. Remove Nth Node From End of List
+
+/** Original Question
+19. Remove Nth Node From End of List
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+ 
+
+Example 1:
+--look at graph online
+
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+Example 2:
+
+Input: head = [1], n = 1
+Output: []
+Example 3:
+
+Input: head = [1,2], n = 1
+Output: [1]
+ 
+
+ */
+/** Q: Template
+
+var removeNthFromEnd = function(head, n) {
+    
+};
+ */
+
+
+
+
+
+
+//Solo 1: 19. Remove Nth Node From End of List
+
+/** Original Question
+19. Remove Nth Node From End of List
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+ 
+
+Example 1:
+--look at graph online
+
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+Example 2:
+
+Input: head = [1], n = 1
+Output: []
+Example 3:
+
+Input: head = [1,2], n = 1
+Output: [1]
+ 
+
+ */
+/** Q: Template
+
+var removeNthFromEnd = function(head, n) {
+    
+};
+ */
+
+
+
+
+
+
+
+//Explaintion 19. Remove Nth Node From End of List
+
+/** Original Question
+19. Remove Nth Node From End of List
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+ 
+
+Example 1:
+--look at graph online
+
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+Example 2:
+
+Input: head = [1], n = 1
+Output: []
+Example 3:
+
+Input: head = [1,2], n = 1
+Output: [1]
+ 
+
+ */
+/** Q: Template
+
+var removeNthFromEnd = function(head, n) {
+    
+};
+ */

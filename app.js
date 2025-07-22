@@ -240,6 +240,39 @@ Explanation: There is no cycle in the linked list.
 
 /** Q: Template
 var detectCycle = function(head) {
+  let fast = head;
+  let slow = head;
+
+  while (fast && fast.next) {
+    fast = fast.next.next;
+    slow = slow.next;
+
+    if (fast === slow) {
+      break; //break b/c this states there is a cycle, 
+    }
+  }
+
+  //if there is no cycle, return null
+  if (!fast || !fast.next) return null;
+
+  //it is now proven there is a cycle
+  // now identify the beg. of the cycle
+  //don't touch 'slow', slow is where the cycle beg. identify, slow
+  //... do so by using 'fast', which beg. at head
+
+  fast = head;
+
+  //if .... is met, return slow
+
+  while (fast !== slow) {
+    // move 'fast' ex. fast++
+    fast = fast.next
+    slow = slow.next //why do we move slow?
+  } 
+  return slow;
+  
+
+
     
 };
  */
@@ -267,11 +300,100 @@ Do not modify the linked list.
 
 /** Q: Template
 var detectCycle = function(head) {
+    let slow = head;
+    let fast = head;
+
+    while (fast && fast.next) {
+
+        //while (fast && fast.next): Ensures the fast pointer 
+        //...does not encounter a None value (end of the list). 
+        //...If it does, the list has no cycle.
+        //
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow === fast) break;
+        //Checks if the slow and fast pointers meet. 
+        //If they do, a cycle is detected.
+
+    }
     
+    if (!fast || !fast.next) return null;
+    //above
+    //Handle Case with No Cycle
+    //indicating no cycle exists in the linked list.
+
+    //Might be Wrong
+    //we have confirm there is a cycle, so we begin 'fast' 
+    // when 'fast' and 'slow' meet is the beg. of cycle
+    // only 'fast' is re-assigned to beg, head,
+    //'slow' hasn't changed
+
+
+    fast = head;
+    // Reset Fast Pointer
+    // if a cycle is detected, the fast pointer is reset to the head of the linked list
+    //This sets up the next phase of the algorithm to determine the start of the cycle.
+
+
+    //Find the Start of the Cycle, 
+    //...find the node where the cycle begins.
+    while (fast !== slow) {
+        //Both fast and slow pointers now move one step at a time.
+        fast = fast.next;
+        slow = slow.next;
+        //They will eventually meet at the start of the cycle because:
+        //The distance from the head to the start of the cycle equals the distance the slow pointer has left to traverse after detection.
+
+    }
+
+    //Return the Start of the Cycle
+    return slow; 
+    //At this point, fast and slow meet at the node where the cycle begins.   
 };
  */
 
+//Better Explaiation Leetcode: 142. Linked List Cycle II
+/**
+var detectCycle = function(head) {
+    let slow = head;  // Initialize the slow pointer to the head of the list
+    let fast = head;  // Initialize the fast pointer to the head of the list
 
+    // Phase 1: Cycle Detection
+    while (fast && fast.next) { 
+        slow = slow.next;         // Slow pointer moves one step
+        fast = fast.next.next;    // Fast pointer moves two steps
+
+        if (slow === fast) break; // If they meet, a cycle is detected
+        //This line checks for the meeting condition and breaks out of the loop if the pointers meet.
+    }
+
+    // If no cycle is found (fast pointer reached the end of the list)
+    if (!fast || !fast.next) return null; 
+
+    // Phase 2: Finding the starting node of the cycle
+
+    //Both fast and slow pointers now move one step at a time (fast = fast.next; slow = slow.next;).
+// The point where they meet this time will be the 
+// starting node of the cycle. 
+// This is a mathematical property of 
+// Floyd's Cycle-Finding Algorithm
+
+    fast = head;            // Reset the fast pointer to the head
+    while (fast !== slow) { // Move both pointers one step at a time
+        fast = fast.next;
+        slow = slow.next;
+    }
+
+    return slow; // The point where they meet is the start of the cycle
+};
+
+// Finding the Cycle Start: The mathematical proof for why resetting
+// one pointer to the head and moving both at the same speed finds 
+// the cycle start is a bit more involved but essentially relies on 
+// the relationship between the distance from the head to the cycle start, 
+// the length of the cycle, and the meeting point within the cycle
+ */
 
 
 
@@ -631,3 +753,4 @@ var isHappy = function(n) {
     
 };
 */
+

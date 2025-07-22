@@ -81,6 +81,18 @@ Explanation: There is no cycle in the linked list.
 
 /** Q: Template
 var hasCycle = function(head) {
+  let slow = head;
+  let fast = head;
+
+  while (fast !== null && fast.next !== null) {
+    slow === slow.next;
+    fast === fast.next.next;
+
+    if (fast === slow) {
+      return true;
+    }
+  }
+  return false 
     
 };
  */
@@ -106,7 +118,33 @@ Return true if there is a cycle in the linked list. Otherwise, return false.
 
 /** Q: Template
 var hasCycle = function(head) {
-    
+
+    // this is stated to be a 'linked list', think 'nodes'
+
+    let slow = head; //head = the head(node) of the linked list, 
+    let fast = head;
+
+    while (fast !== null && fast.next !== null) {
+
+        //Perfect Explaination
+        
+        // while (fast !== null && fast.next !== null): 
+        // The while loop continues as long as fast and fast.
+        // next are not null. This condition ensures that the
+        // fast pointer doesn't go beyond the end of the list
+        // and that fast.next.next (used to move fast by two steps)
+        // is a valid operation.
+        
+
+        slow = slow.next;          // Move slow pointer by one
+        fast = fast.next.next;     // Move fast pointer by two
+
+        if (slow === fast) {
+            return true; // Cycle detected
+        }
+    }
+    return false; // No cycle. 
+    //If fast reaches the end (null), no cycle exists.
 };
  */
 

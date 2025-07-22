@@ -386,3 +386,248 @@ var removeNthFromEnd = function(head, n) {
     
 };
  */
+
+
+
+
+
+
+
+
+
+//LEETCODE 876.Middle of the Linked List
+
+/**Original Question
+876. Middle of the Linked List
+
+Given the head of a singly linked list,
+return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+ 
+
+Example 1:
+
+
+Input: head = [1,2,3,4,5]
+Output: [3,4,5]
+Explanation: The middle node of the list is node 3.
+Example 2:
+
+
+Input: head = [1,2,3,4,5,6]
+Output: [4,5,6]
+Explanation: Since the list has two middle nodes with values 3 and 4,
+ we return the second one.
+ */
+/**Q: Template 
+
+var middleNode = function(head) {
+    
+};
+*/
+
+
+
+
+
+
+//Solo 1: 876.Middle of the Linked List
+/**Original Question 
+876. Middle of the Linked List
+
+Given the head of a singly linked list,
+return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+ 
+
+Example 1:
+
+
+Input: head = [1,2,3,4,5]
+Output: [3,4,5]
+Explanation: The middle node of the list is node 3.
+Example 2:
+
+
+Input: head = [1,2,3,4,5,6]
+Output: [4,5,6]
+Explanation: Since the list has two middle nodes with values 3 and 4,
+ we return the second one.
+*/
+/**Q: Template 
+var middleNode = function(head) {
+    
+};
+*/
+
+
+
+
+
+//Explaintion 876.Middle of the Linked List
+/**Original Question 
+876. Middle of the Linked List
+
+Given the head of a singly linked list,
+return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+ 
+
+Example 1:
+
+
+Input: head = [1,2,3,4,5]
+Output: [3,4,5]
+Explanation: The middle node of the list is node 3.
+Example 2:
+
+
+Input: head = [1,2,3,4,5,6]
+Output: [4,5,6]
+Explanation: Since the list has two middle nodes with values 3 and 4,
+ we return the second one.
+*/
+/**Q: Template 
+var middleNode = function(head) {
+    
+};
+*/
+
+
+
+
+
+
+
+
+
+
+
+//LEETCODE 202. Happy Number
+/**Original Question
+202. Happy Number
+
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+
+-Starting with any positive integer, replace the number by the sum
+of the squares of its digits.
+-Repeat the process until the number equals 1 (where it will stay), 
+or it loops endlessly in a cycle which does not include 1.
+-Those numbers for which this process ends in 1 are happy.
+
+Return true if n is a happy number, and false if not.
+
+ 
+
+Example 1:
+
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+Example 2:
+
+Input: n = 2
+Output: false
+
+ */
+/**Q: Template 
+var isHappy = function(n) {
+    
+};
+*/
+
+
+
+
+
+//Solo 1: 202. Happy Number
+/**Original Question 
+202. Happy Number
+
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+
+-Starting with any positive integer, replace the number by the sum
+of the squares of its digits.
+-Repeat the process until the number equals 1 (where it will stay), 
+or it loops endlessly in a cycle which does not include 1.
+-Those numbers for which this process ends in 1 are happy.
+
+Return true if n is a happy number, and false if not.
+
+ 
+
+Example 1:
+
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+Example 2:
+
+Input: n = 2
+Output: false
+*/
+/**Q: Template 
+var isHappy = function(n) {
+    
+};
+*/
+
+
+
+
+
+//Explaintion 202. Happy Number
+/**Original Question 
+202. Happy Number
+
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+
+-Starting with any positive integer, replace the number by the sum
+of the squares of its digits.
+-Repeat the process until the number equals 1 (where it will stay), 
+or it loops endlessly in a cycle which does not include 1.
+-Those numbers for which this process ends in 1 are happy.
+
+Return true if n is a happy number, and false if not.
+
+ 
+
+Example 1:
+
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+Example 2:
+
+Input: n = 2
+Output: false
+*/
+/**Q: Template 
+var isHappy = function(n) {
+    
+};
+*/

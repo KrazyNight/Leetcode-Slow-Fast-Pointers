@@ -464,12 +464,29 @@ Output: [1]
  
 
  */
-/** Q: Template
+///** Q: Template
 
 var removeNthFromEnd = function(head, n) {
-    
+    let dummy = new ListNode(0);
+    dummy.next = head
+
+    let fast = dummy 
+    let slow = dummy  //this is outside the node, remeber: dummy.next = head
+
+    for(i = 0; i <= n; i++) {
+      fast = fast.next
+    }
+
+    while (fast !== null) {
+      slow = slow.next;
+      fast = fast.next;
+    }
+
+    slow.next = slow.next.next; 
+
+    return dummy.next;
 };
- */
+ //*/
 
 
 
@@ -505,7 +522,62 @@ Output: [1]
 /** Q: Template
 
 var removeNthFromEnd = function(head, n) {
-    
+    let dummy = new ListNode(0);
+    dummy.next = head;
+//Initialization:
+//Both slow and fast pointers are initialized to a dummy node 
+//(explained below) that precedes the head of the actual linked list.
+
+// def precede: come before (something) in time.
+
+    let slow = dummy;
+    let fast = dummy;
+
+    // Move "fast" pointer n steps ahead
+    // remeber: remove the nth node from the end of the list
+    // think in whick location will "slow" be.
+
+    //The fast pointer is moved n steps forward
+    // from its initial position (the dummy node). 
+    // This creates the n-node gap between fast and slow.
+
+    //
+    for (let i = 0; i <= n; i++) { 
+
+        // Note: <= n to account for the dummy node
+        //this will loop until...
+
+        fast = fast.next;
+    }
+
+    // After the fast pointer has moved n steps, 
+    // both slow and fast pointers are moved forward 
+    // one step at a time in each iteration.
+
+    // Move both pointers until fast reaches the end
+    while (fast !== null) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    //When the fast pointer reaches the end of the linked list
+    // (i.e., fast.next is null), the slow pointer will be positioned 
+    // exactly before the node that needs to be removed. 
+    // This is because the n-node gap has been maintained 
+    // throughout the traversal. 
+
+
+    // Remove the nth node from the end
+
+    slow.next = slow.next.next;
+
+    //To remove the target node, the next property of the slow pointer 
+    // is updated to skip the target node: slow.next = slow.next.next;.
+
+    return dummy.next;
+
+    //After the removal operation, the dummy.next is 
+    // returned as the new head of the modified linked list.
 };
  */
 

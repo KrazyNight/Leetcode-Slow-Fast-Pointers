@@ -467,13 +467,15 @@ Output: [1]
 ///** Q: Template
 
 var removeNthFromEnd = function(head, n) {
-    let dummy = new ListNode(0);
-    dummy.next = head
+    let dummy = new ListNode(0); //this is creating a copy, list node
+    dummy.next = head  // this is accessing the node's list, at index 0, b/f you weren't even touching the list
 
-    let fast = dummy 
+    let fast = dummy // these two, f & s are both your pionters
     let slow = dummy  //this is outside the node, remeber: dummy.next = head
 
     for(i = 0; i <= n; i++) {
+      //this for loops ... until you reach the n,
+      // what is n, the nth number form the end of the list that will be deleted
       fast = fast.next
     }
 
@@ -484,7 +486,7 @@ var removeNthFromEnd = function(head, n) {
 
     slow.next = slow.next.next; 
 
-    return dummy.next;
+    return dummy.next; //this will show the new listed node head, doesn't include the node that was deleted
 };
  //*/
 

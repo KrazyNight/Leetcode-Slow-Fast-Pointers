@@ -282,6 +282,40 @@ var detectCycle = function(head) {
 
 
 
+//Wrong! Why Wrong! Leetcode: 142. Linked List Cycle II
+/**Q: Wrong ans :Tempate
+var detectCycle = function(head) {
+
+    //set the two pointers
+    let fast = head;
+    let slow = head;
+
+    // create while loop... to confirm there is a cycle
+    // if cycle, identify where it starts
+    //if no cylce return null
+    
+    while (fast !== null && fast.next) {
+        fast = fast.next.next;
+        slow = slow.next
+
+        if (fast == slow) {
+            fast = head
+
+            fast = fast.next
+            slow = slow.next
+
+        }
+        return slow
+    }
+    return null
+    
+};
+ */
+
+
+
+
+
 
 // Explainations Leetcode: 142. Linked List Cycle II
 
@@ -464,7 +498,7 @@ Output: [1]
  
 
  */
-///** Q: Template
+/** Q: Template
 
 var removeNthFromEnd = function(head, n) {
     let dummy = new ListNode(0); //this is creating a copy, list node
@@ -488,7 +522,7 @@ var removeNthFromEnd = function(head, n) {
 
     return dummy.next; //this will show the new listed node head, doesn't include the node that was deleted
 };
- //*/
+ */
 
 
 
@@ -656,8 +690,21 @@ Explanation: Since the list has two middle nodes with values 3 and 4,
 */
 /**Q: Template 
 var middleNode = function(head) {
+    let fast = head;
+    let slow = head;
+
+    while (fast !== null && fast.next !== null) {
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    return slow
     
 };
+//Once the loop terminates, the once pointer will be 
+// pointing to the middle node of the linked list. 
+// This is because twice has moved twice as fast as once, 
+// so when twice reaches the end of the linked list, 
+// once will have traversed exactly half of the list.
 */
 
 

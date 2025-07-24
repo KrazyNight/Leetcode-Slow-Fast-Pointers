@@ -837,6 +837,36 @@ var isHappy = function(n) {
 
 
 
+
+//Solo 2: 202. Happy Number
+
+/**Original Question 
+202. Happy Number
+
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+
+-Starting with any positive integer, replace the number by the sum
+of the squares of its digits.
+-Repeat the process until the number equals 1 (where it will stay), 
+or it loops endlessly in a cycle which does not include 1.
+-Those numbers for which this process ends in 1 are happy.
+
+Return true if n is a happy number, and false if not.
+
+*/
+
+/**Q: Template 
+var isHappy = function(n) {
+    
+};
+*/
+
+
+
+
+
 //Explaintion 202. Happy Number
 /**Original Question 
 202. Happy Number
@@ -871,7 +901,64 @@ Output: false
 */
 /**Q: Template 
 var isHappy = function(n) {
-    
+    function getNextNumber(num) {
+        let sum = 0;
+        while (num > 0) {
+            const digit = num % 10
+            
+            sum += digit ** 2; // sum += digit ** 2
+            num = Math.floor(num / 10);// num // 10
+        }
+        return sum;
+    }
+    //Here's a breakdown of how it works:
+
+    //while (num > 0):
+
+    //-This initiates a while loop that continues 
+    //-as long as the value of num is greater than 0.
+    //-This ensures that every digit of the number is processed.
+
+    //const digit = num % 10;:
+
+    //-Inside the loop, the modulo operator (%) is used
+    //-to extract the last digit of num. For example, 
+    //-if num is 123, 123 % 10 will result in 3.
+
+    //sum += digit * digit;:
+
+    //-The extracted digit is then squared (digit * digit)
+    //-and added to the sum variable. This sum variable is
+    //-assumed to be initialized to 0 before the loop begins.
+
+    //num = Math.floor(num / 10);:
+
+    //-Math.floor() is used to remove the last digit from 
+    //-num by performing integer division. For example, 
+    //-if num is 123, Math.floor(123 / 10) will result in 12.
+    //- This updated num is then used in the next iteration
+    //- of the loop.
+
+    //-The loop continues to extract, square, and sum the digits
+    //- until num becomes 0, at which point all digits have been
+    //- processed and their squared sum is stored in the sum variable.
+    // 
+
+    let slow = n;
+    let fast = getNextNumber(n);
+
+    while (fast !== 1 && slow !== fast) {
+        //As long as slow and fast are not equal, continue the loop.
+        //Check if fast has reached 1. If it has, return True, indicating that the number is happy.
+
+        slow = getNextNumber(slow);
+        //Move slow to the next number.
+        fast = getNextNumber(getNextNumber(fast));
+        //Move fast two steps forward by applying get_next_number twice.
+        //If slow and fast meet, a cycle is detected, and the loop terminates.
+    }
+
+    return fast === 1;
 };
 */
 

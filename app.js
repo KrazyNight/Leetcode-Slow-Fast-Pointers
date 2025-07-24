@@ -829,7 +829,33 @@ Output: false
 */
 /**Q: Template 
 var isHappy = function(n) {
-    
+
+    function getSquareNextNumber(num) {
+        let sum = 0
+        while (num > 0) {
+            let digit = num % 10;
+            
+            sum += digit ** 2;
+            num = Math.floor(num / 10);
+        }
+        return sum;
+    };
+    //running the code above
+    //step 1; open 'show priview ' by right clicking in index code
+    //inspect, console 
+
+    //const result = getSquareNextNumber(100);
+    //console.log("Function returned:", result);
+    let slow = getSquareNextNumber(n);
+    let fast = getSquareNextNumber(getSquareNextNumber(n))
+
+    while (slow !== fast) {
+        if (fast === 1 ) return true;
+        slow = getSquareNextNumber(slow);
+        fast = getSquareNextNumber(getSquareNextNumber(fast))
+    }
+    return slow === 1
+
 };
 */
 
@@ -859,6 +885,62 @@ Return true if n is a happy number, and false if not.
 
 /**Q: Template 
 var isHappy = function(n) {
+    //algorithm to determine if a number n is happy.
+    //
+    //Starting with any positive integer, replace the number by the sum of the squares of its digits.
+    //replace the number(n) by the sum of the squares of its digits.
+    //sum += digit ** 2
+
+    function getNextSquareDigit(num){
+        let sum = 0;
+        // replace the number by the sum of the squares of its digits.
+        //how?
+        //num is (19), and i want to access "1" and '9'
+        //start with '9'
+        //const digit = num % 10 ; // this leaves remainder 9
+        //sum += digit ** 2 ; // this is 9*9 = 81
+
+        //I need a loop, for nums 
+        while (num > 0) {
+            const digit = num % 10 ;
+            sum += digit ** 2 ;
+            //now I need to update num
+            //...eleminate the last digit from num
+            // num(19) -> num(1)
+            num = Math.floor(num/10)
+        }
+        return sum
+
+    }
+    //check work
+    //const results = getNextSquareDigit(19)
+    //console.log('function returned:', results)
+
+
+    //now determine if a number n is happy.
+
+    let slow = getNextSquareDigit(n);
+    let fast = getNextSquareDigit(getNextSquareDigit(n));
+
+    //slow is set to the next number of the original input n.
+    //fast is set to the next number of the next number of n, meaning it moves twice as fast as slow.
+
+
+    while (slow !== fast) {
+        //Loop Until slow Meets fast, detect if a cycle exists.
+
+        if (fast === 1) return true;
+        //Check if fast has reached 1. If it has, return True, indicating that the number is happy.
+
+        slow = getNextSquareDigit(slow);
+        //Move slow to the next number.
+        fast = getNextSquareDigit(getNextSquareDigit(fast));
+        //Move fast two steps forward by applying get_next_number twice.
+    }
+
+    return slow === 1; 
+    //Determine if the input number n is a happy number.
+
     
 };
 */
